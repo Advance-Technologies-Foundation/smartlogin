@@ -1,0 +1,15 @@
+﻿{
+  "Descriptor": {
+    "UId": "68942255-23f8-4200-8cea-437bd6c109c5",
+    "Name": "BasePageV2",
+    "ModifiedOnUtc": "\/Date(1512517223000)\/",
+    "Parent": {
+      "UId": "d3cc497c-f286-4f13-99c1-751c468733c0",
+      "Name": "BasePageV2"
+    },
+    "ExtendParent": true,
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Base card schema",
+    "DependsOn": []
+  }
+}

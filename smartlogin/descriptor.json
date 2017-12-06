@@ -1,0 +1,20 @@
+﻿{
+  "Descriptor": {
+    "UId": "0b5a4fd3-78c2-4826-b4a9-49287646fd55",
+    "Name": "smartlogin",
+    "ModifiedOnUtc": "\/Date(1512498959000)\/",
+    "Maintainer": "png",
+    "DependsOn": [
+      {
+        "UId": "a7d9c356-450c-46d7-bc85-72dca4e280ba",
+        "PackageVersion": "7.8.0",
+        "Name": "NUI"
+      },
+      {
+        "UId": "613fd913-be03-46ce-909b-f44e4225469e",
+        "PackageVersion": "7.8.0",
+        "Name": "UIv2"
+      }
+    ]
+  }
+}

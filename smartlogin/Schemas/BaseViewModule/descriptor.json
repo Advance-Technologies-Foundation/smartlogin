@@ -1,0 +1,15 @@
+﻿{
+  "Descriptor": {
+    "UId": "1ada7f7d-9982-4a1b-a807-8ee006ce336c",
+    "Name": "BaseViewModule",
+    "ModifiedOnUtc": "\/Date(1512514808000)\/",
+    "Parent": {
+      "UId": "df547e9e-ca94-4f6b-806a-cc90736731c1",
+      "Name": "BaseViewModule"
+    },
+    "ExtendParent": true,
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "BaseViewModule",
+    "DependsOn": []
+  }
+}
