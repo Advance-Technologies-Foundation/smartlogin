@@ -5,7 +5,7 @@ define("BasePageV2", [], function() {
 				this.callParent(arguments);
 				var activeTabName = activeTab.get("Name");
 				if (activeTabName) {
-					Terrasoft.DomainCache.setItem(this.$className + ":activeTan", activeTabName);
+					Terrasoft.DomainCache.setItem(this.$className + ":activeTab", activeTabName);
 				}
 			},
 
@@ -14,7 +14,7 @@ define("BasePageV2", [], function() {
 				if (!tabsCollection || tabsCollection.isEmpty()) {
 					return null;
 				}
-				var defaultTabName = Terrasoft.DomainCache.getItem(this.$className + ":activeTan");
+				var defaultTabName = Terrasoft.DomainCache.getItem(this.$className + ":activeTab");
 				if (defaultTabName) {
 					this.set("DefaultTabName", defaultTabName);
 				} else {
