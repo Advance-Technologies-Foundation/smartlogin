@@ -3,7 +3,7 @@
     "UId": "0b5a4fd3-78c2-4826-b4a9-49287646fd55",
     "Name": "smartlogin",
     "ModifiedOnUtc": "\/Date(1512498959000)\/",
-    "Maintainer": "png",
+    "Maintainer": "ATF",
     "DependsOn": [
       {
         "UId": "a7d9c356-450c-46d7-bc85-72dca4e280ba",
