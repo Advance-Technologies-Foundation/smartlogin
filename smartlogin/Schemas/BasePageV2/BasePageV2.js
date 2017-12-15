@@ -4,7 +4,7 @@ define("BasePageV2", [], function() {
 			activeTabChange: function(activeTab) {
 				this.callParent(arguments);
 				var activeTabName = activeTab.get("Name");
-				if (activeTabNam && !this.get("IsProcessMode")) {
+				if (activeTabName && !this.get("IsProcessMode")) {
 					Terrasoft.DomainCache.setItem(this.$className + ":activeTab", activeTabName);
 				}
 			},
