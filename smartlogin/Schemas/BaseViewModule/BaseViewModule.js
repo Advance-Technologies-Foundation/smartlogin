@@ -1,4 +1,4 @@
-// This is overriden module !!! 1
+// This is overriden module !!!
 define("BaseViewModule", ["ext-base", "terrasoft", "BaseViewModuleResources", "performancecountermanager",
 	"ConfigurationConstants", "ViewGeneratorV2"],
 	function(Ext, Terrasoft, resources, performanceCounterManager, ConfigurationConstants) {
@@ -300,7 +300,7 @@ define("BaseViewModule", ["ext-base", "terrasoft", "BaseViewModuleResources", "p
 			loadModuleFromHistoryState: function(token, immediateLoad) {
 				var moduleName = this.getModuleName(token);
 				if (!moduleName) {
-					return false;
+					return;
 				}
 				var currentState = this.sandbox.publish("GetHistoryState");
 				var keepAlive = this.Ext.isObject(currentState.state) ? currentState.state.keepAlive : false;
@@ -317,7 +317,6 @@ define("BaseViewModule", ["ext-base", "terrasoft", "BaseViewModuleResources", "p
 				} else {
 					this.delayedLoadModule(config);
 				}
-				return true;
 			},
 
 			/**
@@ -355,9 +354,7 @@ define("BaseViewModule", ["ext-base", "terrasoft", "BaseViewModuleResources", "p
 					this.loadChainModule(token);
 				} else {
 					this.refreshCacheHash();
-					if (!this.loadModuleFromHistoryState(token, immediateLoad)) {
-						this.replaceHomePage();
-					}
+					this.loadModuleFromHistoryState(token, immediateLoad);
 				}
 			},
 
@@ -404,7 +401,7 @@ define("BaseViewModule", ["ext-base", "terrasoft", "BaseViewModuleResources", "p
 			 * @private
 			 */
 			replaceHomePage: function() {
-				var hash = this.getHomePagePath(true);
+				var hash = this.getHomePagePath();
 				this.sandbox.publish("ReplaceHistoryState", {hash: hash});
 			},
 
@@ -414,9 +411,9 @@ define("BaseViewModule", ["ext-base", "terrasoft", "BaseViewModuleResources", "p
 			 * @virtual
 			 * @return {String} #### # ######## ########.
 			 */
-			getHomePagePath: function(ignoreLastHash) {
+			getHomePagePath: function() {
 				var lastHash = Terrasoft.DomainCache.getItem("lastHash");
-				if (lastHash && !ignoreLastHash) {
+				if (lastHash) {
 					return lastHash;
 				}
 				var module = this.Terrasoft.configuration.ModuleStructure[this.homeModule];
