@@ -97,6 +97,7 @@ define("BaseViewModule", ["BaseViewModuleResources", "performancecountermanager"
 		 * @param {Object} scope The scope of callback function.
 		 */
 		init: function(callback, scope) {
+			this._initMessages();
 			Terrasoft.chain(
 				this.initSysSettings,
 				this.initViewConfig,
@@ -108,6 +109,27 @@ define("BaseViewModule", ["BaseViewModuleResources", "performancecountermanager"
 				this
 			);
 		},
+
+		destroy: function() {
+			const messages = this.getMessages();
+			const messageKeys = Terrasoft.keys(messages);
+			this.sandbox.unRegisterMessages(messageKeys);
+			this.callParent(arguments);
+		},
+
+		_initMessages: function() {
+			const messages = this.getMessages();
+			if (!messages) {
+				return;
+			}
+			this.sandbox.registerMessages(messages);
+		},
+
+		/**
+		 * Returns object that describes messages.
+		 * @protected
+		 */
+		getMessages: Terrasoft.emptyFn,
 
 		/**
 		 * Display view.
