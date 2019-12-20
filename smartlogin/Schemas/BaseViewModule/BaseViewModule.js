@@ -409,6 +409,10 @@ define("BaseViewModule", ["BaseViewModuleResources", "performancecountermanager"
 		 * @return {String} Returns the name of the module.
 		 */
 		getModuleName: function(token) {
+			if (Terrasoft.Features.getIsEnabled("OpenProcessPagesInChain") && token.state
+					&& token.state.moduleName) {
+				return token.state.moduleName;
+			}
 			return token.hash ? token.hash.moduleName : null;
 		},
 
