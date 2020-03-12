@@ -3,18 +3,18 @@ define("BasePageV2", [], function() {
 		methods: {
 			activeTabChange: function(activeTab) {
 				this.callParent(arguments);
-				var activeTabName = activeTab.get("Name");
+				const activeTabName = activeTab.get("Name");
 				if (activeTabName && !this.get("IsProcessMode")) {
 					Terrasoft.DomainCache.setItem(this.$className + ":activeTab", activeTabName);
 				}
 			},
 
 			getDefaultTabName: function() {
-				var tabsCollection = this.get("TabsCollection");
+				const tabsCollection = this.get("TabsCollection");
 				if (!tabsCollection || tabsCollection.isEmpty()) {
 					return null;
 				}
-				var defaultTabName = Terrasoft.DomainCache.getItem(this.$className + ":activeTab");
+				let defaultTabName = Terrasoft.DomainCache.getItem(this.$className + ":activeTab");
 				if (defaultTabName && !this.get("IsProcessMode")) {
 					this.set("DefaultTabName", defaultTabName);
 				} else {

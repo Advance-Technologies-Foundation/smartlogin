@@ -2,7 +2,7 @@
   "Descriptor": {
     "UId": "0b5a4fd3-78c2-4826-b4a9-49287646fd55",
     "Name": "smartlogin",
-    "ModifiedOnUtc": "\/Date(1512498959000)\/",
+    "ModifiedOnUtc": "\/Date(1584021737041)\/",
     "Maintainer": "ATF",
     "DependsOn": [
       {
